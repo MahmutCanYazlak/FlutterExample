@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFF3C5057),
       ),
       home: const Login(),
       onGenerateRoute: AppRouter.onGenerateRoutes,

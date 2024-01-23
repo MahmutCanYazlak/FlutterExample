@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firs_project/config/routes/route_names.dart';
 import 'package:flutter_firs_project/features/auth/view/login.dart';
 import 'package:flutter_firs_project/features/auth/view/sign_in.dart';
+import 'package:flutter_firs_project/features/home/view/home.dart';
 
 import '../../features/auth/view/sign_up.dart';
 
 class AppRouter {
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case RouteNames.home:
         return _materialRoute(
-          const Login(),
+          const Home(),
         );
       case RouteNames.login:
         return _materialRoute(

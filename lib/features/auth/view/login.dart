@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firs_project/config/routes/route_names.dart';
+import 'package:flutter_firs_project/features/auth/widgets/custom_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatelessWidget {
@@ -8,7 +9,6 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF3C5057),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,11 +21,6 @@ class Login extends StatelessWidget {
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50),
                   ),
-                  /*  gradient: LinearGradient(
-                      colors: [Colors.blue, Color.fromRGBO(152, 218, 217, 10)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ), */
                   color: Color.fromARGB(255, 63, 101, 121),
                 ),
                 child: Column(
@@ -46,32 +41,12 @@ class Login extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
-                      child: Container(
-                          width: 300,
-                          height: 55,
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF263238), Color(0XFF98DAD9)],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: MaterialButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, RouteNames.signIn);
-                            },
-                            child: Text(
-                              'Sign In',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge!
-                                  .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                          )),
+                      child: CustomButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, RouteNames.signIn);
+                        },
+                        text: "Sign In",
+                      ),
                     ),
                   ],
                 ),
