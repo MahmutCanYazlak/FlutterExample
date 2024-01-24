@@ -39,7 +39,7 @@ class _SignInState extends State<SignIn> {
                 child: SvgPicture.asset("assets/svg/amico.svg")),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
@@ -60,53 +60,57 @@ class _SignInState extends State<SignIn> {
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
-                child: Column(
-                  children: [
-                    Text(
-                      "Welcome",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium
-                          ?.copyWith(color: Colors.white),
-                    ),
-                    const CustomText(
-                      text: "Glade to having you",
-                    ),
-                    CustomInput(
-                        controller: _usernameController,
-                        prefixIcon: Icons.person),
-                    CustomInput(
-                      controller: _passwordController,
-                      prefixIcon: Icons.key,
-                      obsecureText: _isObscure,
-                      suffixIcon: _isObscure
-                          ? Icons.visibility_off_outlined
-                          : Icons.remove_red_eye_outlined,
-                      suffixIconOnpRess: () {
-                        setState(() {
-                          _isObscure = !_isObscure;
-                        });
-                      },
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        const Text("Don't have an account?",
-                            style: TextStyle(color: Colors.white30)),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, RouteNames.signUp);
-                            },
-                            child: const CustomText(text: "Sign Up")),
-                      ],
-                    ),
-                    CustomButton(
-                      text: "Sign In",
-                      onPressed: () {
-                        Navigator.pushNamed(context, RouteNames.home);
-                      },
-                    )
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(color: Colors.white),
+                      ),
+                      const CustomText(
+                        text: "Glade to having you",
+                      ),
+                      CustomInput(
+                          controller: _usernameController,
+                          prefixIcon: Icons.person,
+                          text: "Username"),
+                      CustomInput(
+                        controller: _passwordController,
+                        prefixIcon: Icons.key,
+                        text: "Password",
+                        obsecureText: _isObscure,
+                        suffixIcon: _isObscure
+                            ? Icons.visibility_off_outlined
+                            : Icons.remove_red_eye_outlined,
+                        suffixIconOnpRess: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text("Don't have an account?",
+                              style: TextStyle(color: Colors.white30)),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, RouteNames.signUp);
+                              },
+                              child: const CustomText(text: "Sign Up")),
+                        ],
+                      ),
+                      CustomButton(
+                        text: "Sign In",
+                        onPressed: () {
+                          Navigator.pushNamed(context, RouteNames.home);
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

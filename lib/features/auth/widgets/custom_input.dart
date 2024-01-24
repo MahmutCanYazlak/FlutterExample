@@ -9,6 +9,8 @@ class CustomInput extends StatelessWidget {
     this.suffixIcon,
     this.suffixIconOnpRess,
     this.obsecureText,
+    required this.text,
+    this.inputSize,
   });
 
   final TextEditingController controller;
@@ -16,6 +18,8 @@ class CustomInput extends StatelessWidget {
   final IconData? suffixIcon;
   final Function()? suffixIconOnpRess;
   final bool? obsecureText;
+  final String text;
+  final double? inputSize;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,9 +27,10 @@ class CustomInput extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-              padding: EdgeInsets.all(6), child: CustomText(text: "Username")),
+          Padding(
+              padding: const EdgeInsets.all(6), child: CustomText(text: text)),
           Container(
+            height: inputSize,
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: [Color(0X3FA4A4A4), Color(0xF1A4A4A4)],
@@ -39,9 +44,13 @@ class CustomInput extends StatelessWidget {
               controller: controller,
               style: const TextStyle(color: Colors.white70),
               decoration: InputDecoration(
-                prefixIcon: Icon(prefixIcon),
+                prefixIcon: Icon(
+                  prefixIcon,
+                  color: Colors.white54,
+                ),
                 suffixIcon: IconButton(
-                    icon: Icon(suffixIcon), onPressed: suffixIconOnpRess),
+                    icon: Icon(suffixIcon, color: Colors.white54),
+                    onPressed: suffixIconOnpRess),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(color: Colors.grey),
