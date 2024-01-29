@@ -21,6 +21,8 @@ class CustomInput extends StatelessWidget {
   final String text;
   final double? inputSize;
   @override
+  //bir önceki staten geleni gönderirir örneğin eski mesaj ile yeni gelen mesaj eşit değilse çalıştırdık daha sonra gelen veriyi değiştirdik didUpdateWidget çalıştı içerisnide ise _message ye gelen değeri atıp ekrana tek mi çift mi yazdıracak fonksiyonu çağırdık
+
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),

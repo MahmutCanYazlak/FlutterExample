@@ -3,6 +3,7 @@ import 'package:flutter_firs_project/config/routes/route_names.dart';
 import 'package:flutter_firs_project/features/auth/view/login.dart';
 import 'package:flutter_firs_project/features/auth/view/sign_in.dart';
 import 'package:flutter_firs_project/features/home/view/home.dart';
+import 'package:flutter_firs_project/features/userList/view/user_list.dart';
 
 import '../../features/auth/view/sign_up.dart';
 
@@ -25,6 +26,10 @@ class AppRouter {
       case RouteNames.signUp:
         return _materialRoute(
           const SignUp(),
+        );
+      case RouteNames.userList:
+        return _materialRoute(
+          const UserList(),
         );
 
       default:
